@@ -15,12 +15,25 @@ class LikeButton extends React.Component {
             return 'You liked this.';
         }
 
+
+        // === FOLLOWING 2 DO THE EXACT SAME THING!!! ============================
+        // --- Example shows the return without using JSX
+
         // Actual effect of clicking on the button
-        return e( // e could also be shown as React.createElement, but we added it as a const above ^^ to make it quicker
-            'button', // What are we effecting?
-            { onClick: () => this.setState({ liked: true }) }, // What are we doing with the button? (Clicking, then changing value to true)
-            'Like' 
-        );
+        // return e( // e could also be shown as React.createElement, but we added it as a const above ^^ to make it quicker
+        //     'button', // What are we effecting?
+        //     { onClick: () => this.setState({ liked: true }) }, // What are we doing with the button? (Clicking, then changing value to true)
+        //     'Like' // Value that the button reads
+        // );
+
+        // --- Example shows the return WITH JSX
+        return (
+            <button onClick={() => this.setState({ liked: true })}>
+                Like
+            </button>
+        )
+
+        // === END OF SAME RETURN EXAMPLES =======================================
     }
 }
 // ---- End class ----- 
